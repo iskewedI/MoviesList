@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import styles from "./styles";
 
 const MovieCard = ({ Title, Year, Type, imdbID, Poster }) => {
-  const [contentDisplayed, displayContent] = React.useState(false);
+  const [contentDisplayed, displayContent] = useState(false);
   const classes = styles();
 
   const setContentDisplay = () => {
