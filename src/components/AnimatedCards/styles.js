@@ -27,4 +27,9 @@ export default makeStyles({
   arrowRight: {
     float: "right",
   },
+  circularProgress: {
+    //Centering the Circular Progress
+    gridColumn: 2,
+    alignSelf: "center",
+  },
 });

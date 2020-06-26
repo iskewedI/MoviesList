@@ -12,6 +12,7 @@ export default makeStyles({
     ...centeredStyledObj,
   },
   cardContainer: {
+    backgroundColor: "rgba(190, 247, 238, 0.29)",
     flexDirection: "column",
     width: 400,
     height: 200,

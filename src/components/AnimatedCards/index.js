@@ -60,9 +60,21 @@ export default function AnimatedCards({ searchText }) {
         .slice(0, 3)
         .map((value, index) => <Card key={index} {...value} />);
     } else if (isLoading) {
-      return <CircularProgress size={100} color="primary" />;
+      return (
+        <CircularProgress
+          className={classes.circularProgress}
+          size={100}
+          color="primary"
+        />
+      );
     } else {
-      return <div>Cargando...</div>;
+      return (
+        <CircularProgress
+          className={classes.circularProgress}
+          size={80}
+          color="primary"
+        />
+      );
     }
   };
   return (

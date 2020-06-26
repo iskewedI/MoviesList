@@ -8,28 +8,45 @@ import {
   TextField,
 } from "@material-ui/core";
 
-import { MovieIcon } from "../../icons";
-
 import AnimatedCards from "../../components/AnimatedCards";
 
 import styles from "./style";
 
 export default () => {
   const [searchText, setSearchText] = useState("");
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
   const classes = styles();
 
+  const handleMouseEnter = (e) => {
+    const movementX = e.pageX;
+    const movementY = e.pageY;
+    setCursorPosition({
+      x: movementX > 400 ? -5 : 5,
+      y: movementY > 400 ? -5 : 5,
+    });
+  };
+  const handleCursorLeave = () => {
+    setCursorPosition({
+      x: 0,
+      y: 0,
+    });
+  };
   const handleTextChange = (event) => {
     setSearchText(event.target.value);
   };
+
   return (
     <Container className={classes.container}>
-      <Card className={classes.cardContainer}>
+      <Card
+        className={classes.cardContainer}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleCursorLeave}
+        style={{ boxShadow: `${cursorPosition.x}px ${cursorPosition.y}px 3px` }}
+      >
         <Grid container className={classes.titleGridContainer}>
           <Grid>
-            <Typography className={classes.title}>Bienvenido!</Typography>
-          </Grid>
-          <Grid>
-            <MovieIcon className={classes.movieIcon} />
+            <Typography className={classes.title}>Búsqueda</Typography>
           </Grid>
         </Grid>
         <TextField
