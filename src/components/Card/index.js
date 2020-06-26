@@ -32,7 +32,6 @@ const MovieCard = ({ Title, Year, Type, imdbID, Poster }) => {
         <CardMedia
           className={classes.media}
           image={Poster}
-          // title={Title}
           style={
             contentDisplayed && {
               backgroundImage: `linear-gradient(0deg, rgba(254,255,255,1) 0%, rgba(255,255,255,0.9) 10%, rgba(255,255,255,0) 100%), 
