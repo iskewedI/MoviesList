@@ -51,7 +51,7 @@ export default () => {
         </Grid>
         <TextField
           value={searchText}
-          placeholder="Nombre..."
+          placeholder="Ingrese su búsqueda..."
           onChange={handleTextChange}
           className={classes.textFieldSearch}
         ></TextField>
