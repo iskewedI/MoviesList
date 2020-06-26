@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { searchMovie } from "../../redux/actions/search";
-import { movieResults, isSearchLoading } from "../../redux/selectors"; //isSearchLoading
+import { movieResults, isSearchLoading } from "../../redux/selectors";
 
 import MovieResult from "../../components/MovieResult";
 
@@ -20,7 +20,7 @@ export default ({ location }) => {
   const [isLooked, setIsLooked] = useState(false);
 
   useEffect(() => {
-    const { movieName } = queryString.parse(location.search); //Parse de la URL que viene como string a OBJECT
+    const { movieName } = queryString.parse(location.search);
 
     if (movieName && !isLooked) {
       setIsLooked(true);
