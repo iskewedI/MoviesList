@@ -31,6 +31,7 @@ export default function AnimatedCards({ searchText }) {
   const handleClose = () => {
     setOpen(false);
     setSearch(false);
+    setIsLooked(false);
   };
 
   const handleClickOpen = () => {
@@ -52,7 +53,7 @@ export default function AnimatedCards({ searchText }) {
         dispatch(searchMovie({ movieName: searchText }));
       }
     }
-  }, [searchText, isLooked, search, dispatch]);
+  }, [search, searchText, isLooked, dispatch]);
 
   const renderMovies = () => {
     if (movies) {

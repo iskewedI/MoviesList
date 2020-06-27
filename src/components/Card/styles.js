@@ -9,17 +9,28 @@ export default makeStyles({
   },
   actionArea: {
     height: "100%",
+    "&:hover": {
+      background:
+        "linear-gradient(0deg, rgba(254,255,255,1) 0%, rgba(255,255,255,0.9) 10%, rgba(255,255,255,0) 100%)",
+    },
   },
-  media: {
+  cardContent: {
     height: "100%",
-    display: "grid",
+    padding: "0px",
+  },
+  image: {
+    height: "100%",
+    width: "100%",
     maxWidth: 200,
+    display: "block",
+    position: "absolute",
+    "&:hover": {
+      opacity: ".1",
+    },
   },
-  contentAreaDisplayed: {
-    display: "grid",
-    gridTemplateRows: "95% 5% 5%",
-  },
-  contentAreaHidden: {
-    display: "none",
+  cardText: {
+    color: "black",
+    position: "absolute",
+    textAlign: "center",
   },
 });

@@ -29,34 +29,22 @@ const MovieCard = ({ Title, Year, Type, imdbID, Poster }) => {
         onMouseEnter={setContentDisplay}
         onMouseLeave={hiddeContentDisplay}
       >
-        <CardMedia
-          className={classes.media}
-          image={Poster}
-          style={
-            contentDisplayed && {
-              backgroundImage: `linear-gradient(0deg, rgba(254,255,255,1) 0%, rgba(255,255,255,0.9) 10%, rgba(255,255,255,0) 100%), 
-            url(${Poster})`,
-            }
-          }
-        >
-          <CardContent
-            className={
-              contentDisplayed
-                ? classes.contentAreaDisplayed
-                : classes.contentAreaHidden
-            }
-          >
-            <Typography gutterBottom variant="h6" component="h2">
-              {Title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {Year}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {Type}
-            </Typography>
-          </CardContent>
-        </CardMedia>
+        <CardContent className={classes.cardContent}>
+          <CardMedia className={classes.image} image={Poster}></CardMedia>
+          {contentDisplayed && (
+            <div className={classes.cardText}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {Title}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="h3">
+                {Year}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="h3">
+                {Type}
+              </Typography>
+            </div>
+          )}
+        </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
